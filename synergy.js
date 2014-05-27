@@ -72,11 +72,6 @@
 			{
 				find: ['precise'],
 				replace: ['precise (to a point of synergy)']
-			},
-			{
-				suffixDep: 'lol',
-				find: ['meow lol'],
-				replace: ['test lol']
 			}
 		]
 	}
