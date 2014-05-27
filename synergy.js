@@ -22,8 +22,14 @@
 (function(exports) {
 	var synergizer = function() {
 		this.synergaurus = [
+
+
+			// prefixDep: depend on a prefix to apply this rule
+			// suffixDep: depend on a suffix to apply this rule
+
+
 			{
-				find: ['expand','enlarge','get bigger'],
+				find: ['expand','enlarge'],
 				replace: ['propagate', 'amplify', 'aggrandize']
 			},
 			{
@@ -35,7 +41,7 @@
 				replace: ['establish','verify','corroborate']
 			},
 			{
-				find: ['to profit', 'improve margins'],
+				find: ['profit', 'improve margins'],
 				replace: ['monegise']
 			},
 			{
@@ -47,6 +53,7 @@
 				replace: ['innovative cloud solution']
 			},
 			{
+				prefixDep: 'to',
 				find: ['to solve', 'to fix'],
 				replace: ['to innovate and synergize']
 			},
@@ -61,6 +68,11 @@
 			{
 				find: ['precise'],
 				replace: ['precise (to a point of synergy)']
+			},
+			{
+				suffixDep: 'lol',
+				find: ['meow lol'],
+				replace: ['test lol']
 			}
 		]
 	}
@@ -75,12 +87,34 @@
 			for(j in synergizingMap[i].find) {
 				if(test !== true) {
 					var words = synergizedText.split(' ');
+					var removeList = [];
 					for(k in words) {
-						if(words[k].indexOf(synergizingMap[i].find[j]) !== -1) {
-							var which = Math.floor(Math.random() * synergizingMap[i].replace.length);
-							words[k] = words[k].replace(synergizingMap[i].find[j],synergizingMap[i].replace[which]);
+						if(typeof synergizingMap[i].prefixDep !== 'undefined' && words[k-1] == synergizingMap[i].prefixDep) {
+							if(words[k].indexOf(synergizingMap[i].find[j].replace(synergizingMap[i].prefixDep+' ','')) !== -1) {
+								var which = Math.floor(Math.random() * synergizingMap[i].replace.length);
+								removeList.push(parseInt(k-1));
+								words[k] = words[k].replace(synergizingMap[i].find[j].replace(synergizingMap[i].prefixDep+' ',''),synergizingMap[i].replace[which]);
+							}
+						} else if(typeof synergizingMap[i].suffixDep !== 'undefined' && words[parseInt(k+1)] == synergizingMap[i].suffixDep) {
+							if(words[k].indexOf(synergizingMap[i].find[j].replace(' '+synergizingMap[i].suffixDep,'')) !== -1) {
+								var which = Math.floor(Math.random() * synergizingMap[i].replace.length);
+								removeList.push(parseInt(k+1));
+								words[k] = words[k].replace(synergizingMap[i].find[j].replace(' '+synergizingMap[i].suffixDep,''),synergizingMap[i].replace[which]);
+							}
+						} else {
+							if(words[k].indexOf(synergizingMap[i].find[j]) !== -1) {
+								var which = Math.floor(Math.random() * synergizingMap[i].replace.length);
+								words[k] = words[k].replace(synergizingMap[i].find[j],synergizingMap[i].replace[which]);
+							}
 						}
 					}
+
+					//remove redundant text
+					for(i in removeList) {
+						words.splice(removeList[i]-i, 1);
+					}
+
+					//bring the peanut butter back to the jelly
 					synergizedText = words.join(' ');
 				}
 			}
