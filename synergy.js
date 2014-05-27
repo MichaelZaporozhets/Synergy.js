@@ -93,18 +93,21 @@
 					var words = synergizedText.split(' ');
 					var removeList = [];
 					for(k in words) {
+						//check for a prefix
 						if(typeof synergizingMap[i].prefixDep !== 'undefined' && words[k-1] == synergizingMap[i].prefixDep) {
 							if(words[k].indexOf(synergizingMap[i].find[j].replace(synergizingMap[i].prefixDep+' ','')) !== -1) {
 								var which = Math.floor(Math.random() * synergizingMap[i].replace.length);
 								removeList.push(parseInt(k-1));
 								words[k] = words[k].replace(synergizingMap[i].find[j].replace(synergizingMap[i].prefixDep+' ',''),synergizingMap[i].replace[which]);
 							}
+						//check for a suffix
 						} else if(typeof synergizingMap[i].suffixDep !== 'undefined' && words[parseInt(k+1)] == synergizingMap[i].suffixDep) {
 							if(words[k].indexOf(synergizingMap[i].find[j].replace(' '+synergizingMap[i].suffixDep,'')) !== -1) {
 								var which = Math.floor(Math.random() * synergizingMap[i].replace.length);
 								removeList.push(parseInt(k+1));
 								words[k] = words[k].replace(synergizingMap[i].find[j].replace(' '+synergizingMap[i].suffixDep,''),synergizingMap[i].replace[which]);
 							}
+						//treat as a single word
 						} else {
 							if(words[k].indexOf(synergizingMap[i].find[j]) !== -1) {
 								var which = Math.floor(Math.random() * synergizingMap[i].replace.length);
