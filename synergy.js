@@ -5,18 +5,18 @@
 // _\ \ |_| | | | |  __/ | | (_| | |_| |_ | \__ \
 // \__/\__, |_| |_|\___|_|  \__, |\__, (_)/ |___/
 //     |___/                |___/ |___/ |__/     
-//
+
 // Come synergize with me...
-// 
-//
+
+
 // USAGE:
-//
+
 // "I want to enlarge business growth by the end of the year.".synergize();
-//
+
 // OR
-//
+
 // var synergizedText = synergize("I want to enlarge business growth by the end of the year.")
-//
+
 
 
 (function(exports) {
@@ -33,6 +33,22 @@
 			{
 				find: ['make sure','ensure'],
 				replace: ['establish','verify','corroborate']
+			},
+			{
+				find: ['to profit', 'improve margins'],
+				replace: ['monegise']
+			},
+			{
+				find: ['helpful'],
+				replace: ['advantageous']
+			},
+			{
+				find: ['technology','solution','software','project','repository','meeting'],
+				replace: ['innovative cloud solution']
+			},
+			{
+				find: ['solve', 'fix'],
+				replace: ['innovate']
 			}
 		]
 	}
