@@ -40,7 +40,7 @@
 			},
 			{
 				find: ['helpful'],
-				replace: ['advantageous']
+				replace: ['mutually advantageous and cooperative']
 			},
 			{
 				find: ['technology','solution','software','project','repository','meeting'],
