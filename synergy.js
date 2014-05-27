@@ -47,8 +47,8 @@
 				replace: ['innovative cloud solution']
 			},
 			{
-				find: ['solve', 'fix'],
-				replace: ['innovate']
+				find: ['to solve', 'to fix'],
+				replace: ['to innovate and synergize']
 			},
 			{
 				find: ['advantage'],
@@ -57,6 +57,10 @@
 			{
 				find: ['SEO'],
 				replace: ['Search Engine Optimizating Synergy']
+			},
+			{
+				find: ['precise'],
+				replace: ['precise (to a point of synergy)']
 			}
 		]
 	}
