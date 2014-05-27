@@ -49,6 +49,14 @@
 			{
 				find: ['solve', 'fix'],
 				replace: ['innovate']
+			},
+			{
+				find: ['advantage'],
+				replace: ['cutting edge optimization']
+			},
+			{
+				find: ['SEO'],
+				replace: ['Search Engine Optimizating Synergy']
 			}
 		]
 	}
