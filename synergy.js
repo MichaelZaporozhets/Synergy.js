@@ -41,7 +41,7 @@
 				replace: ['establish','verify','corroborate']
 			},
 			{
-				find: ['profit', 'improve margins'],
+				find: ['to profit', 'improve margins'],
 				replace: ['monegise']
 			},
 			{
