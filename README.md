@@ -6,11 +6,11 @@ Come synergize with me...
 
 USAGE:
 
-"I want to enlarge business growth by the end of the year.".synergize();
+    "I want to enlarge business growth by the end of the year.".synergize();
 
 OR
 
-var synergizedText = synergize("I want to enlarge business growth by the end of the year.")
+    var synergizedText = synergize("I want to enlarge business growth by the end of the year.")
 
 
 -----------
