@@ -45,9 +45,11 @@
 				find: ['to profit'],
 				replace: ['monegise']
 			},
+			{
 				prefixDep: 'improve',
 				find: ['improve margins'],
 				replace: ['monegise']
+			},
 			{
 				find: ['helpful'],
 				replace: ['mutually advantageous and cooperative']
