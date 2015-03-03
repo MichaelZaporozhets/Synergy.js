@@ -5,10 +5,9 @@ Come synergize with me...
 
 
 USAGE:
+![](http://puu.sh/gkzk8/93fc98b62b.png)
 
-    "I want to enlarge business growth by the end of the year.".synergize();
-
-OR
+alternatively, you can also do this:
 
     var synergizedText = synergize("I want to enlarge business growth by the end of the year.")
 
